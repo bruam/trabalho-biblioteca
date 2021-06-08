@@ -1,5 +1,4 @@
 const conexao = require('../config/conexaoBD')
-const livroModel = require('../models/livro')
 
 exports.listar = (callback) => {
     const sql = "SELECT * FROM livro";
