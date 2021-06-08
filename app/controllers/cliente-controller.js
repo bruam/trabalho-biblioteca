@@ -15,13 +15,13 @@ exports.listar = (req, res) => {
 
 exports.inserir = (req, res) => {    
     const cliente = req.body;    
-    clienteRepository.inserir(cliente, (erro, clienteSlavo) => {
+    clienteRepository.inserir(cliente, (erro, clienteSalvo) => {
         if(erro){
             res.status(500).json({"erro:":"Database Error"})
             console.log(erro)
         }
         else {
-            res.status(201).json(clienteSlavo)
+            res.status(201).json(clienteSalvo)
         }
     })
 }
