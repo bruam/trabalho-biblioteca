@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const conexao = require('../config/conexaoBD')
-const usuarioRepository = require('../repository/usuario-repository')
+const usuarioRepository = require('../repositories/usuario-repository')
 
 exports.listar = (req, res) => {
     usuarioRepository.listar((erro,usuarios) => {

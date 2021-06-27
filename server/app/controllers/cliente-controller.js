@@ -1,5 +1,5 @@
 const conexao = require('../config/conexaoBD')
-const clienteRepository = require('../repository/cliente-repository')
+const clienteRepository = require('../repositories/cliente-repository')
 
 exports.listar = (req, res) => {
     clienteRepository.listar((erro,clientes) => {
