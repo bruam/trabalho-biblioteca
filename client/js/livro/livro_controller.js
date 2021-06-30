@@ -9,20 +9,29 @@ function carregarLivros() {
   })
 }
 
-function carregarForm(){
-  renderForm();
+function carregarForm(livro){
+  renderForm(livro);
 }
 
 function salvarLivro(livro){
-  inserirProduto(livro, (erro,livro)=> {
-      carregarLivros();
-      limparCampos();
-  })    
+  if(!livro.id) {
+    inserirLivro(livro, (erro,produto)=> {
+        carregarLivros();
+        limparCampos();
+    })    
+  }
+  else {
+      atualizarLivro(livro.id, livro, (erro, livro) => {
+          carregarLivros();
+          limparCampos();
+      })
+  }
 }
 
 //Eventos
-function onSalvar(){
-  salvarLivro (getDataProduto())
+function onSalvar(livro){
+  console.log("Livro: "+ livro);
+  salvarLivro(livro)
 }
 
 function onCancelar(){
@@ -36,4 +45,10 @@ function onDeletar(id){
   });
 }
 
+function onEdit(id){
+  buscarLivro(id, (erro, livro) => {
+      console.log("Carregando Livro "+livro.nome);
+      carregarForm(livro);
+  });
+}
 

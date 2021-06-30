@@ -49,4 +49,11 @@ function renderTabela(livros){
       }
   }
 
+  const linksEdit = document.querySelectorAll(".edit");
+    for(let linkEdit of linksEdit) {
+        linkEdit.onclick = function(event){
+            onEdit(event.target.getAttribute("data-id"));
+        }
+    }
+
 }
