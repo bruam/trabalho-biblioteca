@@ -5,29 +5,45 @@ function renderForm(livro) {
   }
 
   var str = `
-  <h2>Formulario de Livros</h2>
-  <form id="formulario">
-      <input type="hidden" id="idLivro"/>
-      <label for="txtnome">Nome:</label>
-      <input type="text" id="txt-nome" value="${livro.nome ? livro.nome : ''}">
-      <br />
-      <label for="txtuso">Autor:</label>
-      <input type="text" id="txt-autor" value="${livro.autor ? livro.autor : ''}">
-      <br />
-      <label for="txtuso">ISBN:</label>
-      <input type="text" id="txt-isbn" value="${livro.isbn ? livro.isbn : ''}">
-      <br />
-      <label for="txtuso">Editora:</label>
-      <input type="text" id="txt-editora" value="${livro.editora ? livro.editora : ''}">
-      <br />
-      <label for="txtuso">Ano:</label>
-      <input type="text" id="txt-ano" value="${livro.ano ? livro.ano : ''}">
-      <br />
-      <br />
-      <input type="submit" id="btnsalvar" value="Salvar">
-      <input type="reset" value="Cancelar">
-      <br />
-  </form>
+  <h2>Adição / Edição de livros</h2>
+  <div class="form">
+    <form id="formulario">
+        <input type="hidden" id="idLivro"/>
+        <section class="input-div">          
+          <div class="item">
+            <label for="txtnome">Nome:</label>
+            <br />
+            <input type="text" id="txt-nome" class="form-control" value="${livro.nome ? livro.nome : ''}">
+          </div>          
+          <div class="item">
+            <label for="txtuso">Autor:</label>
+            <br />
+            <input type="text" id="txt-autor" class="form-control" value="${livro.autor ? livro.autor : ''}">
+          </div>          
+          <div class="item">
+            <label for="txtuso">ISBN:</label>
+            <br />
+            <input type="text" id="txt-isbn" class="form-control" value="${livro.isbn ? livro.isbn : ''}">
+          </div>          
+          <div class="item">
+            <label for="txtuso">Editora:</label>
+            <br />
+            <input type="text" id="txt-editora" class="form-control" value="${livro.editora ? livro.editora : ''}">
+          </div>          
+          <div class="item">
+            <label for="txtuso">Ano:</label>
+            <br />
+            <input type="text" id="txt-ano" class="form-control" value="${livro.ano ? livro.ano : ''}">
+          </div>
+        </section>
+        <br />
+        <div class="btns-form">
+          <input type="submit" id="btnsalvar" value="Salvar" class="btn-form">
+          <input type="reset" value="Cancelar" class="btn-form">
+        </div>
+        <br />
+    </form>
+  </div>
   `;
 
   let containerForm = document.querySelector("main");

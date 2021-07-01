@@ -1,10 +1,10 @@
 function renderTabela(livros){
   var str=`
-  <h3>Tabela de Livros</h3>
-  <a id='novo' href="#">Novo</a>
+  <h1>Biblioteca Senac - Acervo</h1>
+  <a id='novo' href="#" style='margin-bottom: 5px;'>Novo</a>
   <div id="tabela">
 
-  <table>
+  <table id="livros-table">
       <tr>
           <th style='text-align: left;'>Id</th>
           <th style='text-align: left;'>Nome</th>
@@ -23,9 +23,9 @@ function renderTabela(livros){
               <td>${livros[i].isbn}</td>
               <td>${livros[i].editora}</td>
               <td>${livros[i].ano}</td>
-              <td><a class="edit" href="#" 
+              <td style='text-align: center;'><a class="edit" href="#" 
                   data-id="${livros[i].id}">Editar</a></td>
-              <td><a class="delete" href="#" 
+              <td style='text-align: center;'><a class="delete" href="#" 
                   data-id="${livros[i].id}">Deletar</a></td>
           </tr>`;
           
